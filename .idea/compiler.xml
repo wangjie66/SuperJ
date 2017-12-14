@@ -8,12 +8,14 @@
         <outputRelativeToContentRoot value="true" />
         <module name="common" />
         <module name="thread" />
+        <module name="zookeeper" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
       <module name="common" target="1.5" />
       <module name="superj" target="1.5" />
       <module name="thread" target="1.5" />
+      <module name="zookeeper" target="1.5" />
     </bytecodeTargetLevel>
   </component>
 </project>
