@@ -1,4 +1,5 @@
-package  zkdist;
+package   zookeeper.zkdist;
+
 
 import org.apache.zookeeper.WatchedEvent;
 import org.apache.zookeeper.Watcher;

@@ -1,4 +1,4 @@
-package zkdist;
+package zookeeper.zkdist;
 
 import org.apache.zookeeper.CreateMode;
 import org.apache.zookeeper.WatchedEvent;

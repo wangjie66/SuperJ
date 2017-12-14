@@ -1,4 +1,4 @@
-package zkdist;
+package zookeeper.zkdist;
 
 
 public class Test {

@@ -1,4 +1,4 @@
-package zk;
+package zookeeper.zk;
 
 import org.apache.zookeeper.*;
 import org.apache.zookeeper.data.Stat;
@@ -7,6 +7,7 @@ import org.junit.Test;
 
 import java.util.List;
 
+import static com.sun.xml.internal.ws.dump.LoggingDumpTube.Position.Before;
 
 
 public class SimpleZkClient {
