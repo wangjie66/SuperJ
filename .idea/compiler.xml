@@ -7,12 +7,14 @@
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
         <module name="common" />
-        <module name="thread" />
-        <module name="zookeeper" />
+        <module name="frame" />
+        <module name="j2se" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
       <module name="common" target="1.5" />
+      <module name="frame" target="1.5" />
+      <module name="j2se" target="1.5" />
       <module name="superj" target="1.5" />
       <module name="thread" target="1.5" />
       <module name="zookeeper" target="1.5" />

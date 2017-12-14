@@ -11,8 +11,8 @@
 
     <modules>
         <module>common</module>
-        <module>thread</module>
-        <module>zookeeper</module>
+        <module>frame</module>
+        <module>j2se</module>
     </modules>
 
 </project>

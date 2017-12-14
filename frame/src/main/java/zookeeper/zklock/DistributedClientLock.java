@@ -84,8 +84,6 @@ public class DistributedClientLock {
 			// do something
 		} finally {
 			System.out.println("finished: " + thisPath);
-			// 锟斤拷thisPath删锟斤拷, 锟斤拷锟斤拷thisPath锟斤拷client锟斤拷锟斤拷锟酵ㄖ�
-			// 锟洁当锟斤拷锟酵凤拷锟斤拷
 			zk.delete(this.thisPath, -1);
 		}
 	}
