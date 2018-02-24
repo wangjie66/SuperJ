@@ -21,6 +21,8 @@
         <module>common</module>
         <module>frame</module>
         <module>j2se</module>
+        <module>bigdata</module>
+        <module>work</module>
     </modules>
 
 </project>
