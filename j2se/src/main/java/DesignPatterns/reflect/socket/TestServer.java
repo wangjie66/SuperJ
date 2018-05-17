@@ -1,4 +1,4 @@
-package reflect.socket;
+package DesignPatterns.reflect.socket;
 
 import java.net.InetSocketAddress;
 import java.net.ServerSocket;

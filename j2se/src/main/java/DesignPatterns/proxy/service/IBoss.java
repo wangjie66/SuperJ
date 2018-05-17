@@ -1,4 +1,4 @@
-package proxy.service;
+package DesignPatterns.proxy.service;
 /**
  * 这是一个业务的接口，这个接口中的业务就是返回衣服的价格
  * @author wilson

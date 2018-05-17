@@ -1,4 +1,4 @@
-package proxy;
+package DesignPatterns.proxy;
 
 import java.lang.reflect.InvocationHandler;
 import java.lang.reflect.Method;
@@ -12,7 +12,7 @@ public class ProxyPerson {
 
 
 			public Object invoke(Object proxy, Method method, Object[] args) throws Throwable {
-				System.out.println("proxy is coming....");
+				System.out.println("DesignPatterns.proxy is coming....");
 
 				if (method.getName() == "saySomeThing") {
 					System.out.println("say some thing is special handled.....");
@@ -20,7 +20,7 @@ public class ProxyPerson {
 				} else {
 					Object invoke = method.invoke(p, args); // 调用任何public方法都拦截
 
-					System.out.println("proxy is leaving....");
+					System.out.println("DesignPatterns.proxy is leaving....");
 
 				}
 				return null;

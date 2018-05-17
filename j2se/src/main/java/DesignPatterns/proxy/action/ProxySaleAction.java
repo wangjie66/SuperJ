@@ -1,9 +1,9 @@
-package proxy.action;
+package DesignPatterns.proxy.action;
 
 import org.junit.Test;
-import proxy.proxyclass.ProxyBoss;
-import proxy.service.IBoss;
-import proxy.service.impl.Boss;
+import DesignPatterns.proxy.proxyclass.ProxyBoss;
+import DesignPatterns.proxy.service.IBoss;
+import DesignPatterns.proxy.service.impl.Boss;
 
 
 /**

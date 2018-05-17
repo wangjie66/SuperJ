@@ -1,4 +1,4 @@
-package reflect.socket;
+package DesignPatterns.reflect.socket;
 
 import java.io.BufferedOutputStream;
 import java.io.BufferedReader;
@@ -19,7 +19,7 @@ public class TestClient {
 		InputStream in = socket.getInputStream();
 		
 		PrintWriter pw = new PrintWriter(new BufferedOutputStream(out));
-		pw.println("reflect.socket.TestBusiness:getPrice:yifu");
+		pw.println("DesignPatterns.reflect.socket.TestBusiness:getPrice:yifu");
 		pw.flush();
 		
 		BufferedReader br = new BufferedReader(new InputStreamReader(in));

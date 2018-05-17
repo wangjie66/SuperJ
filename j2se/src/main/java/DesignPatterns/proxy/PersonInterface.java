@@ -1,4 +1,4 @@
-package proxy;
+package DesignPatterns.proxy;
 
 public interface PersonInterface {
 	

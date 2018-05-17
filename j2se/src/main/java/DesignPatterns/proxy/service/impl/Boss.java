@@ -1,7 +1,7 @@
-package proxy.service.impl;
+package DesignPatterns.proxy.service.impl;
 
 
-		import proxy.service.IBoss;
+		import DesignPatterns.proxy.service.IBoss;
 
 /**
  * 实现了卖衣服的接口

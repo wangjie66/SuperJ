@@ -1,4 +1,4 @@
-package reflect;
+package DesignPatterns.reflect;
 
 import java.io.Serializable;
 
