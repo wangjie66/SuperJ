@@ -10,6 +10,8 @@
         <module name="common" />
         <module name="frame" />
         <module name="j2se" />
+        <module name="map-reduce" />
+        <module name="SystemtCache" />
         <module name="work" />
       </profile>
     </annotationProcessing>
@@ -18,7 +20,10 @@
       <module name="common" target="1.5" />
       <module name="frame" target="1.5" />
       <module name="j2se" target="1.5" />
+      <module name="map-reduce" target="1.5" />
+      <module name="reverseJar" target="1.5" />
       <module name="superj" target="1.5" />
+      <module name="SystemtCache" target="1.5" />
       <module name="thread" target="1.5" />
       <module name="work" target="1.5" />
       <module name="zookeeper" target="1.5" />

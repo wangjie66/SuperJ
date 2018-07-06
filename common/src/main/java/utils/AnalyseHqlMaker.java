@@ -783,7 +783,7 @@ public class AnalyseHqlMaker {
 	 * 增加排序字段
 	 * @Author : JieWang
 	 * @Date : Created in 2017/10/17 11:39
-	 * @Email : jiewang11@iflytek.com
+	 * @Email : wjahstu@163.com
 	 */
 	public static String popuHqlOrder(String orderBy, String order) {
 		StringBuilder sb = new StringBuilder();
@@ -798,7 +798,7 @@ public class AnalyseHqlMaker {
 	/**
 	 * @Author : JieWang
 	 * @Date : Created in 2017/10/23 9:49
-	 * @Email : jiewang11@iflytek.com
+	 * @Email : wjahstu@163.com
 	 * or的方法和上面区别，names是多个，值是同一个的情况
 	 */
 	public static String popuHqlEqOrForSameCoulums(String names, String val, Map<String, Object> values) {

@@ -23,6 +23,7 @@
         <module>j2se</module>
         <module>bigdata</module>
         <module>work</module>
+        <module>reverseJar</module>
     </modules>
 
 </project>

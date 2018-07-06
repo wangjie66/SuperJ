@@ -9,7 +9,7 @@ import java.net.URL;
 /**
  * @Author : JieWang
  * @Date : Created in 2017/11/16 16:03
- * @Email : jiewang11@iflytek.com
+ * @Email : wjahstu@163.com
  * 连接工具类
  */
 public class ConnectionUtils {

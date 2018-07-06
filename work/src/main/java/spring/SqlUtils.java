@@ -17,7 +17,7 @@ import java.util.Properties;
 /**
  * @Author : JieWang
  * @Date : Created in 2017年12月28日9:38
- * @Email : jiewang11@iflytek.com
+ * @Email : wjahstu@163.com
  *
  * 初始化加载这个类
  * 调用setApplicationContext 方法

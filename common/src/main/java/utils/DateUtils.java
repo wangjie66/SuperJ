@@ -14,6 +14,8 @@
 
 package utils;
 
+import org.apache.commons.lang.StringUtils;
+
 import java.math.BigDecimal;
 import java.math.RoundingMode;
 import java.text.ParseException;
@@ -58,6 +60,21 @@ public class DateUtils {
 	 * 时间格式 （"yyyy-MM-dd"）
 	 */
 	public final static String FORMAT_YYYYSMMSDD = "yyyy-MM-dd";
+	
+	/**
+	 * 时间格式 （"yyyy年MM月dd日"）
+	 */
+	public final static String FORMAT_YYYYMMDD_CHINESE = "yyyy年MM月dd日";
+
+	/**
+	 * 时间格式 （"yyyy年M月d日"）
+	 */
+	public final static String FORMAT_YYYYMD_CHINESE = "yyyy年M月d日";
+
+	/**
+	 * 时间格式 （"yyyy年M月"）
+	 */
+	public final static String FORMAT_YYYYM_CHINESE = "yyyy年M月";
 
 	/**
 	 * 
@@ -193,7 +210,7 @@ public class DateUtils {
 	 *  @lastModified       
 	 *  @history
 	 */
-	public static String getLastOrNextMonth(String formate, int ca){
+	public static String getLastOrNextMonth(String formate,int ca){
 		Calendar calendar = Calendar.getInstance();//得到日历的实例
 		calendar.set(Calendar.MONTH, calendar.get(Calendar.MONTH)+ca);
 		return DateUtils.getDate(calendar.getTime(),formate);
@@ -209,7 +226,7 @@ public class DateUtils {
 	 *  @lastModified       
 	 *  @history
 	 */
-	public static String getLastOrNextYear(String formate, int ca){
+	public static String getLastOrNextYear(String formate,int ca){
 		Calendar calendar = Calendar.getInstance();//得到日历的实例
 		calendar.set(Calendar.MONTH, calendar.get(Calendar.YEAR)+ca);
 		return DateUtils.getDate(calendar.getTime(),formate);
@@ -225,7 +242,7 @@ public class DateUtils {
 	 *  @lastModified       
 	 *  @history
 	 */
-	public static String getLastOrNextDay(String formate, int ca){
+	public static String getLastOrNextDay(String formate,int ca){
 		Calendar calendar = Calendar.getInstance();//得到日历的实例
 		calendar.set(Calendar.MONTH, calendar.get(Calendar.DATE)+ca);
 		return DateUtils.getDate(calendar.getTime(),formate);
@@ -459,7 +476,7 @@ public class DateUtils {
 	 * @history
 	 */
 	public static String getLastDayByMonth(String date, String fromFmt,
-                                           String toFmt) {
+			String toFmt) {
 		try {
 			Date temp = new SimpleDateFormat(fromFmt).parse(date);
 			Calendar calendar = Calendar.getInstance();
@@ -490,7 +507,7 @@ public class DateUtils {
 	 * @history
 	 */
 	public static String getFirstDayByMonth(String date, String fromFmt,
-                                            String toFmt) {
+			String toFmt) {
 		try {
 			Date temp = new SimpleDateFormat(fromFmt).parse(date);
 			Calendar calendar = Calendar.getInstance();
@@ -520,7 +537,7 @@ public class DateUtils {
 	 * @history
 	 */
 	public static String getFirstDateByWeek(String date, String fromFmt,
-                                            String toFmt) {
+			String toFmt) {
 		try {
 			Date d = new SimpleDateFormat(fromFmt).parse(date);
 			Calendar calendar = Calendar.getInstance();
@@ -556,7 +573,7 @@ public class DateUtils {
 	 * @history
 	 */
 	public static String getLastDateByWeek(String date, String fromFmt,
-                                           String toFmt) {
+			String toFmt) {
 		try {
 			Date d = new SimpleDateFormat(fromFmt).parse(date);
 			Calendar calendar = Calendar.getInstance();
@@ -817,9 +834,7 @@ public class DateUtils {
 		}
 		return "";
 	}
-	public static void main(String[] args) throws ParseException {
-		System.out.println(getDate(parseDate("20171214153800", "yyyyMMddHHmmss"), "yyyy/MM/dd HH:mm:ss"));
-	}
+	
 	/**
 	 * 
 	 *  获取当前年份
@@ -830,103 +845,97 @@ public class DateUtils {
 	 *  @history
 	 */
 	public static int getCurrentYear(){
-		Calendar c= Calendar.getInstance();
+		Calendar c=Calendar.getInstance();
 		return c.get(Calendar.YEAR);
 	}
-
+	
 	/**
 	 *  相差 多少分钟
 	 *  @return
 	 *  @author khlu@iflyteck.com
 	 *  @created 2017年6月19日 上午10:07:19
-	 *  @lastModified
+	 *  @lastModified       
 	 *  @history
 	 */
-	public static BigDecimal getMintesWithTwoTime(Date begin, Date end){
+	public static BigDecimal getMintesWithTwoTime(Date begin,Date end){
 		if(begin == null || end == null){
 			return null;
 		}
-		Calendar dateOne= Calendar.getInstance(),dateTwo= Calendar.getInstance();
+		Calendar dateOne=Calendar.getInstance(),dateTwo=Calendar.getInstance();
 		dateOne.setTime(begin);
 		dateTwo.setTime(end);
 		BigDecimal fengZi = new BigDecimal(dateTwo.getTimeInMillis() - dateOne.getTimeInMillis());
 		BigDecimal fengmu = new BigDecimal(1000*50);
-		return fengZi.divide(fengmu,2, RoundingMode.HALF_UP);
+		return fengZi.divide(fengmu,2,RoundingMode.HALF_UP);
 	}
 
 	/**
-	 *  获取n天之后的日期
-	 *  @author fgwu
-	 *  @created 2017年10月23日 下午3:45:41
+	 * 	获取下个月
+	 *  @param date
+	 *  @param ca
+	 *  @return
+	 *  @author fangwang6
+	 *  @created 2017年12月28日 下午8:20:23
 	 *  @lastModified
 	 *  @history
 	 */
-	public static String getDateByDays(String date, int days){
-		Date formatStartDate = DateUtils.parseDate(date, DateUtils.FORMAT_YYYYMMDD);
-		Date rq = DateUtils.addDays(formatStartDate, days);
-		return DateUtils.getDate(rq, DateUtils.FORMAT_YYYYMMDD);
+	public static String getNextMonth(String date, int ca){
+		try {
+			SimpleDateFormat sdf = new SimpleDateFormat(FORMAT_YYYYMM);
+			Calendar cd = Calendar.getInstance();
+			cd.setTime(sdf.parse(date));
+			cd.add(Calendar.MONTH, ca);//增加ca个月
+			return sdf.format(cd.getTime());
+		} catch (Exception e) {
+			return null;
+		}
 	}
 
 	/**
-	 * 格式化时间为 xx:xx:xx
-	 * @param sec 秒
+	 * 获取上一月
+	 * @param format
 	 * @return
 	 */
-	public static String formatTime(int sec) {
-		String formatTime = "00:00";
-		int hour = 0;
-		int minute = 0;
-		int second = 0;
-		if (sec > 0) {
-			minute = sec / 60;
-			if (minute < 60) {
-				second = sec % 60;
-				formatTime = unitFormat(minute) + ":" + unitFormat(second);
-			} else {
-				hour = minute / 60;
-				if (hour > 99)
-					return "99:59:59";
-				minute = minute % 60;
-				second = sec - hour * 3600 - minute * 60;
-				formatTime = unitFormat(hour) + ":" + unitFormat(minute) + ":" + unitFormat(second);
-			}
-		}
-		return formatTime;
+	public static String getLastMonth(String format) {
+		SimpleDateFormat sdf = new SimpleDateFormat(format);
+		Calendar calendar = Calendar.getInstance();
+		calendar.setTime(new Date());
+		calendar.add(Calendar.MONTH, -1);
+		return sdf.format(calendar.getTime());
 	}
-
-	private static String unitFormat(int i) {
-		String retStr = null;
-		if (i >= 0 && i < 10)
-			retStr = "0" + Integer.toString(i);
-		else
-			retStr = "" + i;
-		return retStr;
-	}
+	
 	/**
-	 *  ｛年月日是否相等｝
-	 *  @param d1
-	 *  @param d2
-	 *  @return boolean
-	 *  @author kuiyao
-	 *  @created 2017年12月26日 上午11:23:29
-	 *  @lastModified       
+	 *  获取当年第一天
+	 *  @return
+	 *  @author xhcheng3
+	 *  @created 2018年3月23日 下午4:58:44
+	 *  @lastModified
 	 *  @history           
 	 */
-	public static boolean sameDate(Date d1, Date d2) {
-	    if(null == d1 || null == d2)  
-	        return false;  
-	    Calendar cal1 = Calendar.getInstance();
-	    cal1.setTime(d1);  
-	    cal1.set(Calendar.HOUR_OF_DAY, 0);
-	    cal1.set(Calendar.MINUTE, 0);
-	    cal1.set(Calendar.SECOND, 0);
-	    cal1.set(Calendar.MILLISECOND, 0);
-	    Calendar cal2 = Calendar.getInstance();
-	    cal2.setTime(d2);  
-	    cal2.set(Calendar.HOUR_OF_DAY, 0);
-	    cal2.set(Calendar.MINUTE, 0);
-	    cal2.set(Calendar.SECOND, 0);
-	    cal2.set(Calendar.MILLISECOND, 0);
-	    return  cal1.getTime().equals(cal2.getTime());  
-	}  
+	public static Date getFirstDayOfYear() {
+		Calendar ca = Calendar.getInstance();
+		ca.set(Calendar.DAY_OF_YEAR, 1);
+		return ca.getTime();
+	}
+
+
+	 /**
+	  * <p>Discription:[计算时间差(天数)]</p>
+	  * @author       : sszhang3
+	  * @created      : 2018/4/13 14:31
+	  * @param dateStr1
+	  * @param dateStr2
+	  * @return
+	  */
+	public static long calculateTime(String dateStr1, String dateStr2,String formate) {
+		long sc = 0;
+		if(null!=dateStr1&&null!=dateStr2&&null!=formate){
+			Date da1 = parseDate(dateStr1,formate);
+			Date da2 = parseDate(dateStr2,formate);
+			Long time = da1.getTime() - da2.getTime();
+			sc = time/(1000*60*60*24);
+		}
+		return sc;
+	}
+
 }
