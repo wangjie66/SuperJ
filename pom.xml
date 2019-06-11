@@ -24,6 +24,8 @@
         <module>bigdata</module>
         <module>work</module>
         <module>reverseJar</module>
+        <module>itcast</module>
+        <module>大型网站系统与JAVA中间件实践[BOOK]</module>
     </modules>
 
 </project>

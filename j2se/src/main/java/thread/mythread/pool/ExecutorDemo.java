@@ -13,7 +13,9 @@ import java.util.concurrent.ScheduledExecutorService;
 public class ExecutorDemo {
 	
 	public static void main(String[] args) {
+		//单个线程池
 		ExecutorService newSingleThreadExecutor = Executors.newSingleThreadExecutor();
+		//缓存池
 		ExecutorService newCachedThreadPool = Executors.newCachedThreadPool();
 		
 		int cpuNums = Runtime.getRuntime().availableProcessors();

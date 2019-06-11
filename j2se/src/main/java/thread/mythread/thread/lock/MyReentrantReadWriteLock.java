@@ -1,4 +1,4 @@
-package mythread.thread.lock ;
+package thread.mythread.thread.lock;
 
 import java.util.concurrent.locks.ReentrantReadWriteLock;
 
@@ -55,7 +55,7 @@ public class MyReentrantReadWriteLock {
 	     * @param thread
 	     */
 	    public void write(Thread thread) {
-	        rwl.writeLock().lock();;
+	        rwl.writeLock().lock();
 	        try {
 	            long start = System.currentTimeMillis();
 	             

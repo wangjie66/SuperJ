@@ -1,4 +1,4 @@
-package mythread.thread.lock ;
+package thread.mythread.thread.lock;
 
 public class Test {
 	public static void main(String[] args) {

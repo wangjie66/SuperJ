@@ -1,4 +1,4 @@
-package mythread.pool ;
+package thread.mythread.pool;
 
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
@@ -24,8 +24,9 @@ public class ThreadPoolWithRunable {
 					}
 				}
 			});
+
 		}
-		pool.shutdown();
+		//pool.shutdown();
 	}
 
 }

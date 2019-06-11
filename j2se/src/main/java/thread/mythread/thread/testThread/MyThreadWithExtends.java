@@ -1,4 +1,4 @@
-package mythread.thread.testThread;
+package thread.mythread.thread.testThread;
 
 import java.util.Random;
 

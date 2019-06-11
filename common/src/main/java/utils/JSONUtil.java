@@ -17,6 +17,7 @@ package utils;
 import com.iflytek.iframework.orm.Page;
 import net.sf.json.JSONObject;
 
+import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -144,6 +145,22 @@ public class JSONUtil {
 	 */
 	public static String error(String msg) {
 		return result(false, null, msg);
+	}
+
+	/**
+	 * toBean
+	 * @param json
+	 * @return
+	 */
+	public Object jsonAndMapToObject(String json){
+		JSONObject jsonObject = JSONObject.fromObject(json);
+		Map<String, Class> classMap = new HashMap<String, Class>();
+		// 信访人
+		classMap.put("xfrAddList", ArrayList.class);
+		classMap.put("xfrDeleteList", String.class);
+		Object xfjxxDto = (Object) JSONObject.toBean(jsonObject,
+				Object.class, classMap);
+		return xfjxxDto ;
 	}
 
 }

@@ -33,7 +33,7 @@ public class ProducerTool {
     public void produceMessage(String message) throws JMSException, Exception {      
         initialize();      
         TextMessage msg = session.createTextMessage(message);      
-        connection.start();      
+        connection.start();
         System.out.println("Producer:->Sending message: " + message);      
         producer.send(msg);      
         System.out.println("Producer:->Message sent complete!");      

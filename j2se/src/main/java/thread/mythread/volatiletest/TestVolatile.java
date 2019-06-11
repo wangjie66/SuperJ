@@ -1,4 +1,4 @@
-package mythread.volatiletest;
+package thread.mythread.volatiletest;
 
 public class TestVolatile {
 
@@ -7,7 +7,6 @@ public class TestVolatile {
 	public static void main(String[] args) throws Exception {
 
 		for (int i = 0; i < 100; i++) {
-
 			new Thread(new Runnable() {
 
 
@@ -17,7 +16,6 @@ public class TestVolatile {
 					}
 				}
 			}).start();
-
 		}
 		
 		Thread.sleep(2000);

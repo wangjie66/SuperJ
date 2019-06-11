@@ -1,5 +1,4 @@
-package mythread.thread.testThread;
-
+package thread.mythread.thread.testThread;
 
 public class MyThreadWithImpliment implements Runnable {
 	int x;
