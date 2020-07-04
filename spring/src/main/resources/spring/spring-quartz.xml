@@ -1,0 +1,156 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+        http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+<!--  <bean id="testJobDetail" class="org.springframework.scheduling.quartz.MethodInvokingJobDetailFactoryBean">-->
+<!--    <property name="targetObject" ref="testJob"></property>-->
+<!--    <property name="targetMethod" value="showHelp"></property>-->
+<!--  </bean>-->
+
+<!--  <bean id="testJobTrigger" class="org.springframework.scheduling.quartz.CronTriggerFactoryBean">-->
+<!--    <property name="jobDetail" ref="testJobDetail"/>-->
+<!--    <property name="cronExpression" value="*/5 * * * * ?"/>-->
+<!--  </bean>-->
+
+<!--  &lt;!&ndash; 监控中心 高危项目趋势图 启动job执行每次计算数据保存 start&ndash;&gt;-->
+<!--  <bean id="appInfoJobDetail" class="org.springframework.scheduling.quartz.MethodInvokingJobDetailFactoryBean">-->
+<!--    <property name="targetObject" ref="appInfoJob"></property>-->
+<!--    <property name="targetMethod" value="recordApplicationTrend"></property>-->
+<!--  </bean>-->
+
+<!--  <bean id="appInfoJobTrigger" class="org.springframework.scheduling.quartz.CronTriggerFactoryBean">-->
+<!--    <property name="jobDetail" ref="appInfoJobDetail"/>-->
+<!--    <property name="cronExpression" value="0 0 0 * * ?"/>-->
+<!--  </bean>-->
+<!--  &lt;!&ndash; 监控中心 高危项目趋势图 启动job执行每次计算数据保存 end&ndash;&gt;-->
+
+<!--  &lt;!&ndash; 项目首页CVE数量趋势图 启动job执行每次计算数据保存 start&ndash;&gt;-->
+<!--  <bean id="cveJobDetail" class="org.springframework.scheduling.quartz.MethodInvokingJobDetailFactoryBean">-->
+<!--    <property name="targetObject" ref="cveJob"></property>-->
+<!--    <property name="targetMethod" value="doJob"></property>-->
+<!--  </bean>-->
+<!--  <bean id="cveJobTrigger" class="org.springframework.scheduling.quartz.CronTriggerFactoryBean">-->
+<!--    <property name="jobDetail" ref="cveJobDetail"/>-->
+<!--    <property name="cronExpression" value="0 0/30 * * * ? "/>-->
+<!--    &lt;!&ndash;<property name="cronExpression" value="0 * * * * ?"/>&ndash;&gt;-->
+<!--  </bean>-->
+<!--  &lt;!&ndash; 项目首页CVE数量趋势图 启动job执行每次计算数据保存 end&ndash;&gt;-->
+
+
+
+<!--  &lt;!&ndash; 定时更新用户使用到的jar的数据 &ndash;&gt;-->
+<!--  <bean id="updateJarDetail" class="org.springframework.scheduling.quartz.MethodInvokingJobDetailFactoryBean">-->
+<!--    <property name="targetObject" ref="jarInfoRefreshJob"></property>-->
+<!--    <property name="targetMethod" value="doJob"></property>-->
+<!--  </bean>-->
+<!--  <bean id="updateJarTrigger" class="org.springframework.scheduling.quartz.CronTriggerFactoryBean">-->
+<!--    <property name="jobDetail" ref="updateJarDetail"/>-->
+<!--    <property name="cronExpression" value="0 0 0 * * ?"/>-->
+<!--  </bean>-->
+<!--  &lt;!&ndash; 定时更新用户使用到的jar的数据 &ndash;&gt;-->
+
+<!--  &lt;!&ndash; 定时刷新license相关 license表，license_detail表&ndash;&gt;-->
+<!--  <bean id="updateLicenseJobDetail" class="org.springframework.scheduling.quartz.MethodInvokingJobDetailFactoryBean">-->
+<!--    <property name="targetObject" ref="licenseUpdateJob"></property>-->
+<!--    <property name="targetMethod" value="doJob"></property>-->
+<!--  </bean>-->
+<!--  <bean id="updateLicenseTrigger" class="org.springframework.scheduling.quartz.CronTriggerFactoryBean">-->
+<!--    <property name="jobDetail" ref="updateLicenseJobDetail"/>-->
+<!--    <property name="cronExpression" value="0 0 0 * * ?"/>-->
+<!--  </bean>-->
+<!--  &lt;!&ndash; 定时刷新license相关 license表，license_detail表&ndash;&gt;-->
+
+<!--&lt;!&ndash; 定时刷新jar_info表的grade,grade_desc&ndash;&gt;-->
+<!--  <bean id="updateJarInfoGradeJobDetail" class="org.springframework.scheduling.quartz.MethodInvokingJobDetailFactoryBean">-->
+<!--    <property name="targetObject" ref="updateJarInfoGradeJob"></property>-->
+<!--    <property name="targetMethod" value="doJob"></property>-->
+<!--  </bean>-->
+<!--  <bean id="updateJarInfoGradeTrigger" class="org.springframework.scheduling.quartz.CronTriggerFactoryBean">-->
+<!--    <property name="jobDetail" ref="updateJarInfoGradeJobDetail"/>-->
+<!--    <property name="cronExpression" value="0 0 0 * * ?"/>-->
+<!--    &lt;!&ndash;<property name="cronExpression" value="0 0/5 * * * ?"/>&ndash;&gt;-->
+<!--    &lt;!&ndash;<property name="cronExpression" value="0 10 11 * * ?"/>&ndash;&gt;-->
+<!--  </bean>-->
+
+<!--  &lt;!&ndash; 定时刷新t_js_info表的grade,grade_desc&ndash;&gt;-->
+<!--  <bean id="updateJsInfoGradeJobDetail" class="org.springframework.scheduling.quartz.MethodInvokingJobDetailFactoryBean">-->
+<!--    <property name="targetObject" ref="updateJsInfoGradeJob"></property>-->
+<!--    <property name="targetMethod" value="doJob"></property>-->
+<!--  </bean>-->
+<!--  <bean id="updateJsInfoGradeTrigger" class="org.springframework.scheduling.quartz.CronTriggerFactoryBean">-->
+<!--    <property name="jobDetail" ref="updateJsInfoGradeJobDetail"/>-->
+<!--    <property name="cronExpression" value="0 0 0 * * ?"/>-->
+<!--  </bean>-->
+
+<!--  &lt;!&ndash; 定时同步数据&ndash;&gt;-->
+<!--  <bean id="syncTableDataJobDetail" class="org.springframework.scheduling.quartz.MethodInvokingJobDetailFactoryBean">-->
+<!--    <property name="targetObject" ref="syncTableData"></property>-->
+<!--    <property name="targetMethod" value="doJob"></property>-->
+<!--  </bean>-->
+
+<!--  <bean id="execSqlScriptJobDetail" class="org.springframework.scheduling.quartz.MethodInvokingJobDetailFactoryBean">-->
+<!--    <property name="targetObject" ref="sqlExecJob"></property>-->
+<!--    <property name="targetMethod" value="doExec"></property>-->
+<!--  </bean>-->
+<!--  <bean id="syncTableDataTrigger" class="org.springframework.scheduling.quartz.CronTriggerFactoryBean">-->
+<!--    <property name="jobDetail" ref="syncTableDataJobDetail"/>-->
+<!--    <property name="cronExpression" value="0 0 0 * * ?"/>-->
+<!--    &lt;!&ndash;<property name="cronExpression" value="0 0/5 * * * ?"/>&ndash;&gt;-->
+<!--    &lt;!&ndash;<property name="cronExpression" value="0 10 11 * * ?"/>&ndash;&gt;-->
+<!--  </bean>-->
+
+<!--  &lt;!&ndash; 执行sql脚本：quartz实例化5秒后执行一次job的方式 &ndash;&gt;-->
+<!--  <bean id="execSqlScriptTrigger" class="org.springframework.scheduling.quartz.SimpleTriggerFactoryBean">-->
+<!--    <property name="jobDetail" ref="execSqlScriptJobDetail" />-->
+<!--    <property name="startDelay" value="5000" />-->
+<!--    <property name="repeatCount" value="0" />-->
+<!--  </bean>-->
+<!--  &lt;!&ndash; 定时刷新jar_info表的grade,grade_desc&ndash;&gt;-->
+
+<!--  &lt;!&ndash; 定时刷新t_component表的grade,grade_desc&ndash;&gt;-->
+<!--  <bean id="updateComponentGradeJobDetail" class="org.springframework.scheduling.quartz.MethodInvokingJobDetailFactoryBean">-->
+<!--    <property name="targetObject" ref="updateComponentGradeJob"></property>-->
+<!--    <property name="targetMethod" value="doJob"></property>-->
+<!--  </bean>-->
+<!--  <bean id="updateComponentGradeTrigger" class="org.springframework.scheduling.quartz.CronTriggerFactoryBean">-->
+<!--    <property name="jobDetail" ref="updateComponentGradeJobDetail"/>-->
+<!--    <property name="cronExpression" value="0 0 0 * * ?"/>-->
+<!--    &lt;!&ndash;<property name="cronExpression" value="0 0/5 * * * ?"/>&ndash;&gt;-->
+<!--    &lt;!&ndash;<property name="cronExpression" value="0 10 11 * * ?"/>&ndash;&gt;-->
+<!--  </bean>-->
+  <!-- 定时刷新t_component表的grade,grade_desc-->
+
+
+
+<!--  <bean id="scheduler" class="org.springframework.scheduling.quartz.SchedulerFactoryBean">-->
+<!--    <property name="triggers">-->
+<!--      <list>-->
+<!--        &lt;!&ndash;<ref bean="cveInitTrigger" />&ndash;&gt;-->
+<!--        &lt;!&ndash;<ref bean="updateJarTrigger"/>&ndash;&gt;-->
+<!--        &lt;!&ndash;<ref bean="updateLicenseTrigger" />&ndash;&gt;-->
+
+<!--&lt;!&ndash;        <ref bean="cveJobTrigger"/>&ndash;&gt;-->
+<!--&lt;!&ndash;        <ref bean="updateJarInfoGradeTrigger"/>&ndash;&gt;-->
+<!--&lt;!&ndash;        <ref bean="updateComponentGradeTrigger"/>&ndash;&gt;-->
+<!--&lt;!&ndash;        <ref bean="updateJsInfoGradeTrigger" />&ndash;&gt;-->
+<!--&lt;!&ndash;        <ref bean="syncTableDataTrigger"/>&ndash;&gt;-->
+<!--        &lt;!&ndash;数据库版本升级trigger&ndash;&gt;-->
+<!--        &lt;!&ndash;<ref bean="execSqlScriptTrigger"/>&ndash;&gt;-->
+
+<!--      </list>-->
+<!--    </property>-->
+<!--  </bean>-->
+
+<!--  &lt;!&ndash; 定时刷新fastSacn表的grade,grade_desc&ndash;&gt;-->
+<!--  <bean id="updateFastScanGradeJobDetail" class="org.springframework.scheduling.quartz.MethodInvokingJobDetailFactoryBean">-->
+<!--    <property name="targetObject" ref="fsatScanUpdateJob"></property>-->
+<!--    <property name="targetMethod" value="doJob"></property>-->
+<!--  </bean>-->
+<!--  <bean id="updateFastScanGradeTrigger" class="org.springframework.scheduling.quartz.CronTriggerFactoryBean">-->
+<!--    <property name="jobDetail" ref="updateFastScanGradeJobDetail"/>-->
+<!--    <property name="cronExpression" value="0 0 0/5 * * ? "/>-->
+<!--  </bean>-->
+  <!-- 定时刷新fastSacn表的grade,grade_desc-->
+</beans>

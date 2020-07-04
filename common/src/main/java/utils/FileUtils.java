@@ -1,13 +1,10 @@
 package utils;
 
-import org.springframework.stereotype.Component;
-
 import java.io.*;
 import java.nio.ByteBuffer;
 import java.nio.MappedByteBuffer;
 import java.nio.channels.FileChannel;
 
-@Component("fileUtils")
 public class FileUtils {
     public static byte[] getContent(String filePath) throws IOException {
         File file = new File(filePath);

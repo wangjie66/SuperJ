@@ -19,6 +19,7 @@
 
     <modules>
         <module>common</module>
+        <module>spring</module>
         <module>frame</module>
         <module>j2se</module>
         <module>bigdata</module>
